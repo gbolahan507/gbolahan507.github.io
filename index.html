@@ -1,0 +1,302 @@
+<title>Gbolahan Hameed</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&family=Public+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root{
+    --ground:#0E1013; --surface:#15181D; --raised:#1B1F25;
+    --ink:#EDEFF2; --body:#B2B8C1; --muted:#7C848F; --faint:#5C646E;
+    --accent:#E9B155; --accent-dim:#8A6A34; --accent-wash:rgba(233,177,85,.10);
+    --rule:#232830; --rule-soft:#1C2027; --ok:#6FCF97;
+    --display:'Schibsted Grotesk',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    --text:'Public Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    --mono:'IBM Plex Mono',ui-monospace,'SF Mono',Menlo,monospace;
+  }
+  :root[data-theme="light"]{
+    --ground:#FBFBF9; --surface:#FFFFFF; --raised:#F4F5F3;
+    --ink:#14171B; --body:#3A4149; --muted:#69717A; --faint:#8D949C;
+    --accent:#8A5E12; --accent-dim:#C9A468; --accent-wash:rgba(138,94,18,.07);
+    --rule:#E2E4E1; --rule-soft:#EDEEEC; --ok:#2E7D53;
+  }
+  @media (prefers-color-scheme:light){
+    :root:not([data-theme="dark"]){
+      --ground:#FBFBF9; --surface:#FFFFFF; --raised:#F4F5F3;
+      --ink:#14171B; --body:#3A4149; --muted:#69717A; --faint:#8D949C;
+      --accent:#8A5E12; --accent-dim:#C9A468; --accent-wash:rgba(138,94,18,.07);
+      --rule:#E2E4E1; --rule-soft:#EDEEEC; --ok:#2E7D53;
+    }
+  }
+  *{box-sizing:border-box}
+  body{
+    background:var(--ground); color:var(--body);
+    font-family:var(--text); font-size:15px; line-height:1.65;
+    margin:0; padding-block:0 84px; padding-left:22px; padding-right:22px;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:960px; margin:0 auto}
+  a{color:var(--ink); text-decoration:none; border-bottom:1px solid var(--accent-dim)}
+  a:hover{border-bottom-color:var(--accent); color:var(--accent)}
+  a:focus-visible{outline:2px solid var(--accent); outline-offset:3px; border-radius:2px}
+
+  .top{padding-block:46px 0}
+  .badge{
+    display:inline-flex; align-items:center; gap:8px;
+    font-family:var(--mono); font-size:.72rem; letter-spacing:.09em;
+    text-transform:uppercase; color:var(--muted);
+    border:1px solid var(--rule); border-radius:100px;
+    padding:5px 13px 5px 11px; margin-bottom:26px;
+  }
+  .dot{width:6px; height:6px; border-radius:50%; background:var(--ok); flex:none}
+  .hero{display:flex; gap:44px; align-items:flex-start; justify-content:space-between}
+  .hero-text{flex:1 1 420px; min-width:0}
+  h1{
+    font-family:var(--display); font-weight:700;
+    font-size:clamp(2.3rem,6.4vw,3.35rem); line-height:1.02;
+    letter-spacing:-.028em; color:var(--ink); margin:0 0 10px; text-wrap:balance;
+  }
+  .role{
+    font-family:var(--display); font-weight:500;
+    font-size:clamp(1.02rem,2.6vw,1.24rem); color:var(--accent);
+    margin:0 0 24px; letter-spacing:-.005em;
+  }
+  .intro,.avail{font-size:1.04rem; color:var(--body); max-width:56ch}
+  .intro{margin:0 0 16px}
+  .avail{margin:0 0 28px}
+  .intro strong{color:var(--ink); font-weight:600}
+  .portrait{
+    flex:none; width:168px; height:168px; border-radius:50%;
+    background:var(--raised); border:1px solid var(--rule);
+    display:grid; place-items:center; overflow:hidden;
+    font-family:var(--display); font-weight:600; font-size:2.7rem; color:var(--accent);
+  }
+  .portrait img{width:100%; height:100%; object-fit:cover; display:block}
+  @media (max-width:700px){
+    .hero{flex-direction:column-reverse; gap:26px; align-items:flex-start}
+    .portrait{width:104px; height:104px; font-size:1.8rem}
+  }
+  .actions{display:flex; flex-wrap:wrap; gap:9px}
+  .btn{
+    font-family:var(--mono); font-size:.78rem; letter-spacing:.03em;
+    padding:9px 15px; border:1px solid var(--rule); border-radius:3px;
+    color:var(--body); background:var(--surface); transition:.14s;
+  }
+  .btn:hover{border-color:var(--accent); color:var(--accent); background:var(--accent-wash)}
+  .btn.primary{background:var(--accent); color:var(--ground); border-color:var(--accent); font-weight:500}
+  .btn.primary:hover{opacity:.87; color:var(--ground); background:var(--accent)}
+
+  .sec{
+    display:grid; grid-template-columns:172px 1fr; gap:36px;
+    padding-block:40px; border-top:1px solid var(--rule-soft);
+  }
+  .sec:first-of-type{margin-top:52px}
+  .sec > h2{
+    font-family:var(--display); font-weight:500; font-size:.94rem;
+    color:var(--muted); margin:0; padding-top:2px;
+  }
+  .sec-body{min-width:0}
+  .sec-body > p{margin:0 0 14px; max-width:62ch}
+  .sec-body > p:last-child{margin-bottom:0}
+  @media (max-width:740px){
+    .sec{grid-template-columns:1fr; gap:14px; padding-block:32px}
+    .sec > h2{
+      font-family:var(--mono); font-size:.7rem; letter-spacing:.14em;
+      text-transform:uppercase; color:var(--faint);
+    }
+  }
+
+  .cards{display:grid; grid-template-columns:repeat(auto-fit,minmax(232px,1fr)); gap:14px}
+  .card{background:var(--surface); border:1px solid var(--rule); border-radius:4px; padding:18px 19px}
+  .card h3{font-family:var(--display); font-weight:600; font-size:.97rem; color:var(--ink); margin:0 0 7px}
+  .card p{margin:0; font-size:.9rem; color:var(--muted); line-height:1.58}
+
+  .rows{display:grid; gap:0}
+  .row{
+    display:grid; grid-template-columns:150px 1fr; gap:22px;
+    padding-block:15px; border-bottom:1px solid var(--rule-soft); align-items:baseline;
+  }
+  .row:last-child{border-bottom:0}
+  .row .k{font-family:var(--mono); font-size:.76rem; color:var(--faint); font-variant-numeric:tabular-nums}
+  .row .v{min-width:0}
+  .row .v b{font-family:var(--display); font-weight:600; color:var(--ink); font-size:.99rem}
+  .row .v em{display:block; font-style:normal; color:var(--muted); font-size:.88rem; margin-top:2px}
+  @media (max-width:560px){ .row{grid-template-columns:1fr; gap:3px} }
+
+  .tablewrap{overflow-x:auto; border:1px solid var(--rule); border-radius:4px; background:var(--surface)}
+  table{border-collapse:collapse; width:100%; min-width:520px; font-size:.87rem}
+  th{
+    font-family:var(--mono); font-weight:500; font-size:.66rem; letter-spacing:.1em;
+    text-transform:uppercase; color:var(--faint); text-align:left;
+    padding:11px 15px; border-bottom:1px solid var(--rule); white-space:nowrap;
+  }
+  td{padding:11px 15px; border-bottom:1px solid var(--rule-soft); vertical-align:top; color:var(--body)}
+  tr:last-child td{border-bottom:0}
+  td.num{font-family:var(--mono); white-space:nowrap}
+  td.date{font-family:var(--mono); color:var(--faint); font-variant-numeric:tabular-nums; white-space:nowrap}
+  td code{font-family:var(--mono); font-size:.93em; color:var(--ink); word-break:break-word}
+
+  .work{padding-block:19px; border-bottom:1px solid var(--rule-soft)}
+  .work:first-child{padding-top:0}
+  .work:last-child{border-bottom:0; padding-bottom:0}
+  .work-head{display:flex; justify-content:space-between; align-items:baseline; gap:14px; flex-wrap:wrap}
+  .work-head h3{font-family:var(--display); font-weight:600; font-size:1.02rem; color:var(--ink); margin:0}
+  .work-head .when{font-family:var(--mono); font-size:.74rem; color:var(--faint); white-space:nowrap}
+  .work .kicker{font-size:.87rem; color:var(--muted); margin:2px 0 9px}
+  .work ul{margin:0; padding-left:0; list-style:none}
+  .work li{position:relative; padding-left:15px; margin-bottom:5px; max-width:62ch; font-size:.94rem}
+  .work li::before{content:"·"; position:absolute; left:3px; color:var(--accent-dim); font-weight:700}
+  .tags{display:flex; flex-wrap:wrap; gap:6px; margin-top:11px}
+  .tag{font-family:var(--mono); font-size:.67rem; color:var(--muted); border:1px solid var(--rule); border-radius:2px; padding:2px 7px}
+
+  .note{font-size:.88rem; color:var(--muted)}
+  footer{
+    margin-top:46px; padding-top:20px; border-top:1px solid var(--rule-soft);
+    font-family:var(--mono); font-size:.71rem; color:var(--faint); letter-spacing:.04em;
+  }
+</style>
+
+<div class="wrap">
+
+  <div class="top">
+    <span class="badge"><span class="dot"></span>Available now</span>
+    <div class="hero">
+      <div class="hero-text">
+        <h1>Gbolahan Hameed</h1>
+        <p class="role">Flutter Engineer · Flutter framework contributor</p>
+        <p class="intro">I build production mobile apps in Flutter and Dart — and I work on the framework itself. <strong>Four of my pull requests are merged into <code>flutter/flutter</code></strong>, refactoring widget-layer test suites. Nearly five years shipping to the App&nbsp;Store and Google&nbsp;Play, across telemedicine, payments and marketplace products.</p>
+        <p class="avail">Open to Flutter, mobile and cross-platform engineering roles in London and the South East — permanent or contract. Also open to relocating to Greater Manchester for the right role.</p>
+        <div class="actions">
+          <a class="btn primary" href="mailto:ahabeeblahi1@gmail.com">Email me</a>
+          <a class="btn" href="cv.pdf">CV (PDF)</a>
+          <a class="btn" href="https://github.com/gbolahan507">GitHub</a>
+          <a class="btn" href="https://linkedin.com/in/gbolahan507">LinkedIn</a>
+        </div>
+      </div>
+      <div class="portrait"><img src="portrait.jpg" alt="Gbolahan Hameed" width="560" height="560" loading="eager"></div>
+    </div>
+  </div>
+
+  <section class="sec">
+    <h2>What I do</h2>
+    <div class="sec-body">
+      <div class="cards">
+        <div class="card"><h3>Ship apps end to end</h3><p>Sole mobile engineer on production apps serving thousands of users — architecture through to App Store and Play releases.</p></div>
+        <div class="card"><h3>Contribute to Flutter</h3><p>Work inside the framework's own test suite, not just on top of the SDK. Four merged PRs in the widget layer.</p></div>
+        <div class="card"><h3>Profile, don't guess</h3><p>60&nbsp;fps held under load, cold-start cut 35%, memory tuned for low-end Android — measured in DevTools.</p></div>
+        <div class="card"><h3>Set the standard</h3><p>Introduce Clean Architecture, state management and automated testing onto codebases that arrived without them.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <h2>Flutter framework</h2>
+    <div class="sec-body">
+      <p>Contributions to <code>flutter/flutter</code> — removing Material dependencies from widget-layer tests so they exercise the widget library in isolation, and relocating tests that had drifted into the wrong package.</p>
+      <div class="tablewrap">
+        <table>
+          <thead><tr><th>PR</th><th>Merged</th><th>Change</th></tr></thead>
+          <tbody>
+            <tr><td class="num"><a href="https://github.com/flutter/flutter/pull/182211">#182211</a></td><td class="date">2026-02-13</td><td>Remove Material dependency from <code>semantics_keep_alive_offstage_test.dart</code></td></tr>
+            <tr><td class="num"><a href="https://github.com/flutter/flutter/pull/182141">#182141</a></td><td class="date">2026-02-13</td><td>Remove Material dependency from <code>transformed_scrollable_test.dart</code></td></tr>
+            <tr><td class="num"><a href="https://github.com/flutter/flutter/pull/181951">#181951</a></td><td class="date">2026-02-19</td><td>Move <code>SelectionArea</code> web test from widgets to material</td></tr>
+            <tr><td class="num"><a href="https://github.com/flutter/flutter/pull/181903">#181903</a></td><td class="date">2026-02-19</td><td>Refactor <code>autofill_group_test.dart</code> to remove Material dependencies</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note" style="margin-top:14px"><a href="https://github.com/flutter/flutter/pulls?q=is%3Apr+author%3Agbolahan507+is%3Amerged">Verify on GitHub →</a></p>
+    </div>
+  </section>
+
+  <section class="sec">
+    <h2>Experience</h2>
+    <div class="sec-body">
+      <div class="rows">
+        <div class="row"><span class="k">May 2025 – Feb 2026</span><span class="v"><b>Imani Health and Technology</b><em>Mobile Developer (Contract) — telemedicine platform</em></span></div>
+        <div class="row"><span class="k">Mar 2024 – Present</span><span class="v"><b>Courage Intercession</b><em>Flutter Developer (Concurrent Contract) — design system &amp; performance</em></span></div>
+        <div class="row"><span class="k">Mar 2024 – Apr 2025</span><span class="v"><b>Abs Real Digital Services</b><em>Mobile Developer (Contract) — consumer payments app</em></span></div>
+        <div class="row"><span class="k">Jan 2023 – Feb 2024</span><span class="v"><b>The Vegan Kind</b><em>Senior Mobile Developer — UK's largest vegan marketplace</em></span></div>
+        <div class="row"><span class="k">Dec 2021 – Dec 2022</span><span class="v"><b>Strapt Vending</b><em>Mobile Developer — Flutter kiosk, web &amp; admin</em></span></div>
+        <div class="row"><span class="k">Feb 2026 – Present</span><span class="v"><b>Scottish Tech Army</b><em>Android Engineer (Volunteer) — Soundscape</em></span></div>
+      </div>
+      <p class="note" style="margin-top:18px"><a href="cv.pdf">Full CV (PDF) →</a></p>
+    </div>
+  </section>
+
+  <section class="sec">
+    <h2>Selected work</h2>
+    <div class="sec-body">
+      <div class="work">
+        <div class="work-head"><h3>Telemedicine platform</h3><span class="when">2025 – 2026</span></div>
+        <p class="kicker">Imani Health and Technology · patient + clinician apps</p>
+        <ul>
+          <li>Designed and shipped two apps end to end on one shared REST backend and design system.</li>
+          <li>HD video consultations, digital prescriptions and lab-result delivery with third-party SDKs and real-time streams.</li>
+          <li>Owned architecture and engineering standards across both applications.</li>
+        </ul>
+        <div class="tags"><span class="tag">Flutter</span><span class="tag">Dart</span><span class="tag">REST</span><span class="tag">Real-time</span><span class="tag">Design system</span></div>
+      </div>
+      <div class="work">
+        <div class="work-head"><h3>Consumer payments app</h3><span class="when">2024 – 2025</span></div>
+        <p class="kicker">Abs Real Digital Services · App Store &amp; Google Play</p>
+        <ul>
+          <li>10,000+ downloads at 4.8 stars across 189 reviews — processing airtime, data and bill payments.</li>
+          <li>Integrated payment providers over REST and exposed a public JSON API for external integration.</li>
+          <li>Traced defects from crash reports and store reviews to root cause, protecting stability through growth.</li>
+        </ul>
+        <div class="tags"><span class="tag">Flutter</span><span class="tag">Payments</span><span class="tag">Public API</span><span class="tag">Crash triage</span></div>
+      </div>
+      <div class="work">
+        <div class="work-head"><h3>The Vegan Kind</h3><span class="when">2023 – 2024</span></div>
+        <p class="kicker">UK's largest vegan marketplace · iOS &amp; Android</p>
+        <ul>
+          <li>Sole dedicated mobile engineer on production apps serving 15,000 monthly active shoppers.</li>
+          <li>Redesigned checkout and payment experience, lifting completion rate 18%.</li>
+          <li>Cut cold-start 35% and reduced memory use on low-end Android devices using Flutter DevTools.</li>
+          <li>Defined Clean Architecture and Riverpod as the mobile standard; automated releases, cutting cycle time 40%.</li>
+        </ul>
+        <div class="tags"><span class="tag">Flutter</span><span class="tag">Clean Architecture</span><span class="tag">Riverpod</span><span class="tag">DevTools</span><span class="tag">CI/CD</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <h2>Open source</h2>
+    <div class="sec-body">
+      <div class="rows">
+        <div class="row"><span class="k">Java · Flutter</span><span class="v"><b><a href="https://github.com/gbolahan507/fintech-super-app">FinTech Super App</a></b><em>Spring Boot microservices behind a Flutter client with Kafka event streaming — multi-currency wallet, investment tracking, expense analytics.</em></span></div>
+        <div class="row"><span class="k">Dart</span><span class="v"><b><a href="https://github.com/gbolahan507/naija-food-finder-uk">Naija Food Finder UK</a></b><em>Flutter app with CI for finding Nigerian restaurants and African shops across the UK.</em></span></div>
+        <div class="row"><span class="k">Kotlin</span><span class="v"><b><a href="https://github.com/gbolahan507/Soundscape-Android">Soundscape</a></b><em>Scottish Tech Army. Offline maps and real-time 3D-audio callouts for blind and low-vision users.</em></span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <h2>Stack</h2>
+    <div class="sec-body">
+      <div class="rows">
+        <div class="row"><span class="k">Core</span><span class="v">Flutter (iOS, Android, Web) · Dart · Platform channels &amp; native SDK integration</span></div>
+        <div class="row"><span class="k">Architecture</span><span class="v">Clean Architecture · MVVM · SOLID · Riverpod / Provider / BLoC · Dependency injection</span></div>
+        <div class="row"><span class="k">Testing</span><span class="v">Unit, widget &amp; integration tests · Code review · DevTools profiling · Jank &amp; memory-leak tracing</span></div>
+        <div class="row"><span class="k">Backend</span><span class="v">REST APIs · Firebase (Auth, Firestore, Cloud Functions, FCM) · Real-time streams · Offline-first caching</span></div>
+        <div class="row"><span class="k">Native</span><span class="v">Android — Kotlin, Java</span></div>
+        <div class="row"><span class="k">Delivery</span><span class="v">CI/CD (GitHub Actions, Codemagic) · App Store &amp; Google Play releases · Agile/Scrum</span></div>
+        <div class="row"><span class="k">Also</span><span class="v">Go · Spring Boot · Terraform · Sentry</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <h2>Contact</h2>
+    <div class="sec-body">
+      <p>For roles or contract work — email is fastest.</p>
+      <div class="actions">
+        <a class="btn primary" href="mailto:ahabeeblahi1@gmail.com">ahabeeblahi1@gmail.com</a>
+        <a class="btn" href="tel:+447776574776">07776 574776</a>
+        <a class="btn" href="https://github.com/gbolahan507">GitHub</a>
+        <a class="btn" href="https://linkedin.com/in/gbolahan507">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>devhameed.com · MSc Computer Science, University of Hertfordshire · Luton, UK · 25 min to London St Pancras</footer>
+
+</div>
